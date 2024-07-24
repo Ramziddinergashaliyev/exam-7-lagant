@@ -1,6 +1,6 @@
 .service {
-  margin-top: 20px;
   &__cards {
+    margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
