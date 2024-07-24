@@ -6,12 +6,14 @@ import Service from "../../components/service/Service";
 import Sale from "../../components/sale/Sale";
 import Article from "../../components/article/Article";
 import News from "../../components/news/News";
+import Product from "../../components/product/Product";
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <Room />
+      <Product />
       <Service />
       <Sale />
       <Article />
