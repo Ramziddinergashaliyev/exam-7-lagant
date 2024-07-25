@@ -1,0 +1,23 @@
+.products__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  img {
+    width: 20px;
+    cursor: pointer;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      width: 30px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+  }
+}

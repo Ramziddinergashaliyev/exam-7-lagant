@@ -13,6 +13,7 @@ const Room = () => {
         backgroundSize: "cover",
       }}
       className="room__card"
+      key={el.id}
     >
       <div className="room__card__info">
         <h3>{el?.title}</h3>

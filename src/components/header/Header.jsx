@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import img from "../../assets/icon/Logo.png";
 import { FiSearch } from "react-icons/fi";
 import { FaRegCircleUser } from "react-icons/fa6";
@@ -9,9 +9,16 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 
 import "./header.scss";
+import Menu from "../menu/Menu";
 
 const Header = () => {
   const [show, setShow] = useState(false);
+
+  let { pathname } = useLocation();
+  if (pathname.includes("admin")) {
+    return <></>;
+  }
+
   return (
     <>
       <div className="header__top">
@@ -27,6 +34,17 @@ const Header = () => {
       </div>
       <header className="header">
         <nav className="header__nav container">
+          {show ? (
+            <>
+              <Menu setShow={setShow} />{" "}
+              <div
+                onClick={() => setShow(false)}
+                className="header__nav__overlay"
+              ></div>
+            </>
+          ) : (
+            <></>
+          )}
           <div className="header__nav__logo">
             <button onClick={() => setShow(true)}>
               <RxHamburgerMenu />
@@ -35,9 +53,7 @@ const Header = () => {
               <img src={img} alt="" />
             </Link>
           </div>
-          <ul
-            className={`header__nav__list ${show ? "header__nav__show" : ""}`}
-          >
+          <ul className="header__nav__list">
             <li onClick={() => setShow(false)} className="header__nav__close">
               <IoMdClose />
             </li>
@@ -62,7 +78,7 @@ const Header = () => {
             <Link>
               <FaRegCircleUser />
             </Link>
-            <Link>
+            <Link to={"/wishlist"}>
               <LuShoppingBag />
             </Link>
           </div>

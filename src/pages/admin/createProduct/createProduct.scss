@@ -1,0 +1,34 @@
+.form {
+  padding: 20px;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 500;
+    padding: 0px 0px 10px;
+  }
+
+  &__create {
+    width: 500px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #aaa3;
+      border: 1px solid #aaa6;
+      outline: none;
+    }
+
+    button {
+      background-color: black;
+      border-radius: 6px;
+      border: none;
+      color: white;
+      padding: 10px 30px;
+      width: 200px;
+    }
+  }
+}

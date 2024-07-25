@@ -1,0 +1,52 @@
+.shop {
+  &__top {
+    background: url(../../assets/images/shop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+
+    &__title {
+      //styleName: Headline 3;
+      font-family: Poppins;
+      font-size: 54px;
+      font-weight: 500;
+      line-height: 58px;
+      letter-spacing: -1px;
+      text-align: center;
+      color: #000000;
+    }
+
+    &__text {
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      text-align: center;
+      color: #121212;
+    }
+
+    @media (max-width: 450px) {
+      height: 300px;
+
+      &__title {
+        font-size: 34px;
+      }
+      &__text {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__cards {
+    padding: 0px 50px;
+
+    @media (max-width: 550px) {
+      padding: 0px;
+    }
+  }
+}

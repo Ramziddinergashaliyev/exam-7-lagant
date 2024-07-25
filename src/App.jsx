@@ -7,6 +7,12 @@ import Shop from "./pages/shop/Shop";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Single from "./pages/single/Single";
+import Wishlist from "./pages/wishlist/Wishlist";
+import Admin from "./pages/admin/Admin";
+import CreateProduct from "./pages/admin/createProduct/CreateProduct";
+import ManageProduct from "./pages/admin/manageProduct/ManageProduct";
+import CreateCategory from "./pages/admin/createCategory/CreateCategory";
+import ManageCategory from "./pages/admin/manageCategory/ManageCategory";
 
 function App() {
   return (
@@ -18,6 +24,13 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/single/:id" element={<Single />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/admin" element={<Admin />}>
+          <Route path="createProduct" element={<CreateProduct />} />
+          <Route path="manageProduct" element={<ManageProduct />} />
+          <Route path="createCategory" element={<CreateCategory />} />
+          <Route path="manageCategory" element={<ManageCategory />} />
+        </Route>
       </Routes>
       <Footer />
     </>

@@ -7,7 +7,6 @@ import "./article.scss";
 
 const Article = ({ limit }) => {
   const { data } = useGetProductsQuery();
-  console.log(data);
 
   const articleData = data?.slice(1, limit)?.map((el) => (
     <div key={el?.id} className="article__card">

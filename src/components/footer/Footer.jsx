@@ -4,8 +4,14 @@ import { FaInstagram } from "react-icons/fa";
 import { FiFacebook, FiYoutube } from "react-icons/fi";
 
 import "./footer.scss";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  let { pathname } = useLocation();
+  if (pathname.includes("admin")) {
+    return <></>;
+  }
+
   return (
     <footer className="footer">
       <div className="footer__row container">

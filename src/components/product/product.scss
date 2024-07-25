@@ -8,7 +8,8 @@
 
     &__title {
       font-family: Poppins;
-      font-size: 50px;
+      font-size: 40px;
+      line-height: 46px;
       width: 10%;
       font-weight: 500;
       text-align: left;
@@ -25,11 +26,6 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      // display: -webkit-box;
-      // line-clamp: 1;
-      // -webkit-box-orient: vertical;
-      // -webkit-line-clamp: 1;
-      // overflow: hidden;
     }
   }
 
@@ -41,11 +37,10 @@
 
   &__card__img {
     position: relative;
-    background-color: #f3f5f7;
-    padding: 70px 15px;
+    overflow: hidden;
     img {
       width: 100%;
-      height: 200px;
+      height: 250px;
       object-fit: cover;
     }
   }
@@ -54,10 +49,52 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding: 10px 0px;
   }
 
   &__card {
     overflow: hidden;
+    border-radius: 5px;
+
+    &__img-add {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      width: 90%;
+      bottom: -40px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      background-color: #141718;
+      color: white;
+      border: none;
+      transition: 0.6s;
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  &__card__btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 20px 10px;
+    gap: 10px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    &-delete {
+      color: red;
+      font-size: 30px;
+    }
+  }
+
+  &__card:hover &__card__img-add {
+    bottom: 10px;
   }
 
   &__card__img__heart {
@@ -131,7 +168,6 @@
   }
 
   &__card__info__text {
-    //styleName: Caption 1 (Semi);
     font-family: Inter;
     font-size: 14px;
     font-weight: 600;
@@ -143,7 +179,7 @@
   @media (max-width: 1070px) {
     &__cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-gap: 20px;
     }
   }
@@ -160,10 +196,27 @@
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     &__top {
       flex-wrap: wrap;
     }
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__card__img {
+      img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+    }
+  }
+  @media (max-width: 350px) {
     &__cards {
       display: grid;
       grid-template-columns: repeat(1, 1fr);

@@ -1,0 +1,31 @@
+.createCategory {
+  padding: 25px;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px 0px;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #aaa3;
+    border: none;
+    outline: none;
+  }
+  button {
+    padding: 10px;
+    font-size: 12px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    border: none;
+  }
+}
