@@ -43,6 +43,7 @@ export const productApi = api.injectEndpoints({
 
 export const {
   useGetProductsQuery,
+  useGetProductByIdQuery,
   useCreateProductMutation,
   useDeleteProductMutation,
   useUpdateProductMutation,

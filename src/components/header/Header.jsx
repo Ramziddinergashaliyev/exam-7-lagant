@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/icon/Logo.png";
-import { IoSearchOutline } from "react-icons/io5";
+import { FiSearch } from "react-icons/fi";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { LuShoppingBag, LuTicket } from "react-icons/lu";
 import { FaArrowRight } from "react-icons/fa6";
@@ -31,7 +31,7 @@ const Header = () => {
             <button onClick={() => setShow(true)}>
               <RxHamburgerMenu />
             </button>
-            <Link>
+            <Link to={"/"}>
               <img src={img} alt="" />
             </Link>
           </div>
@@ -42,20 +42,23 @@ const Header = () => {
               <IoMdClose />
             </li>
             <li className="header__nav__item">
-              <Link>Home</Link>
+              <Link to={"/"}>Home</Link>
             </li>
             <li className="header__nav__item">
-              <Link>Shop</Link>
+              <Link to={"/shop"}>Shop</Link>
             </li>
             <li className="header__nav__item">
-              <Link>Blog</Link>
+              <Link to={"/blog"}>Blog</Link>
             </li>
             <li className="header__nav__item">
-              <Link>Contact Us</Link>
+              <Link to={"/contact"}>Contact Us</Link>
             </li>
           </ul>
           <div className="header__nav__icons">
-            <IoSearchOutline />
+            {/* <div className="header__nav__icons-search">
+              <input type="text" />
+            </div> */}
+            <FiSearch />
             <Link>
               <FaRegCircleUser />
             </Link>

@@ -10,6 +10,8 @@ import art1 from "../assets/images/art1.jpg";
 import art2 from "../assets/images/art2.jpg";
 import art3 from "../assets/images/art3.jpg";
 
+import user from "../assets/icon/user.png";
+
 export const ROOM = [
   {
     id: 1,
@@ -76,5 +78,38 @@ export const ARTICLE = [
     title: "Decor your bedroom",
     desc: "Read More",
     img: art3,
+  },
+];
+
+export const CONTACT = [
+  {
+    id: 1,
+    img: user,
+    name: "Sofia Harvetz",
+    desc: "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident.",
+  },
+  {
+    id: 2,
+    img: user,
+    name: "Nicolas Jensen",
+    desc: "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident.",
+  },
+  {
+    id: 3,
+    img: user,
+    name: "Nicolas Jensen",
+    desc: "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident.",
+  },
+  {
+    id: 4,
+    img: user,
+    name: "Sofia Harvetz",
+    desc: "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident.",
+  },
+  {
+    id: 5,
+    img: user,
+    name: "Sofia Harvetz",
+    desc: "I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident.",
   },
 ];

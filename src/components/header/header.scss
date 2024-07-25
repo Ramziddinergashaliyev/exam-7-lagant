@@ -63,7 +63,7 @@
   &__nav__list {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
   }
 
   &__nav__item {
@@ -79,6 +79,21 @@
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  &__nav__icons-search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #aaa6;
+    border-radius: 4px;
+    justify-content: center;
+    padding: 5px;
+    // input {
+    //   outline: none;
+    //   border: none;
+    //   padding: 5px;
+    //   width: 200px;
+    // }
   }
 
   &__nav__close {

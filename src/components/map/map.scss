@@ -1,0 +1,69 @@
+.map {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 40px 0px;
+
+  &__left {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      input {
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid #aaa5;
+        outline: none;
+      }
+
+      textarea {
+        resize: none;
+        border-radius: 6px;
+        outline: none;
+        border: 1px solid #aaa5;
+        padding: 10px;
+      }
+      button {
+        padding: 10px 30px;
+        border-radius: 10px;
+        width: 200px;
+        border: none;
+        margin-top: 10px;
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+
+  &__right {
+    &-map {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 700px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 40px 0px;
+
+    &__left {
+      form {
+        gap: 5px;
+      }
+    }
+
+    &__right {
+      &-map {
+        width: 100%;
+        height: 300px;
+      }
+    }
+  }
+}

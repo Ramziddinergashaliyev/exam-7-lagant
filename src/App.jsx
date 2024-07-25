@@ -6,6 +6,7 @@ import Contact from "./pages/contact/Contact";
 import Shop from "./pages/shop/Shop";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import Single from "./pages/single/Single";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/single/:id" element={<Single />} />
       </Routes>
       <Footer />
     </>

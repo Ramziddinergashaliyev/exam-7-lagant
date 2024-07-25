@@ -1,0 +1,201 @@
+.contact {
+  padding: 30px 0px;
+  &__info {
+    &__title {
+      font-family: Poppins;
+      font-size: 54px;
+      font-weight: 500;
+      letter-spacing: -1px;
+      text-align: left;
+      color: #141718;
+      width: 60%;
+    }
+
+    &__text {
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      text-align: left;
+      color: #141718;
+      width: 60%;
+    }
+
+    @media (max-width: 1050px) {
+      &__title {
+        font-family: Poppins;
+        font-size: 34px;
+        width: 100%;
+      }
+      &__text {
+        font-family: Inter;
+        font-size: 16px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 450px) {
+      &__title {
+        font-family: Poppins;
+        font-size: 28px;
+        width: 100%;
+      }
+      &__text {
+        font-family: Inter;
+        font-size: 14px;
+        line-height: 20px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__about {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    background-color: #f3f5f7;
+    &__left {
+      img {
+        width: 100%;
+      }
+    }
+
+    &__right {
+      padding: 20px;
+    }
+
+    &__right-title {
+      font-family: Poppins;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 44px;
+      letter-spacing: -0.4000000059604645px;
+      text-align: left;
+    }
+
+    &__right-text {
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      text-align: left;
+      color: #141718;
+      padding: 15px 0px;
+    }
+
+    &__right__shop {
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: -0.4000000059604645px;
+      text-align: left;
+      border-bottom: 1px solid #141718;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @media (max-width: 750px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 400px) {
+      &__right {
+        padding: 10px;
+      }
+
+      &__right-text {
+        padding: 0px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &__right-title {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__service {
+    background-color: #f3f5f7;
+  }
+
+  &__mobile {
+    &__title {
+      //styleName: Headline 4;
+      font-family: Poppins;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 44px;
+      letter-spacing: -0.4000000059604645px;
+      text-align: center;
+      color: #141718;
+      padding: 30px 0px;
+    }
+
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+    }
+
+    &__card {
+      padding: 35px;
+      background-color: #f3f5f7;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    &__card__img {
+      svg {
+        font-size: 22px;
+      }
+    }
+
+    &__card__title {
+      //styleName: Hairline 1;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+      text-align: center;
+      padding: 10px 0px;
+      color: #6c7275;
+    }
+
+    &__card__text {
+      color: #141718;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 26px;
+      text-align: center;
+    }
+
+    @media (max-width: 950px) {
+      &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+      }
+
+      &__card {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 750px) {
+      &__cards {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+      }
+
+      &__card {
+        padding: 25px;
+      }
+    }
+  }
+}

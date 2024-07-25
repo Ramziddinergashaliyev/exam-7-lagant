@@ -1,0 +1,62 @@
+.blog {
+  padding: 0px 0px 30px;
+  &__top {
+    background: url(../../assets/images/blog.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: grid;
+    place-items: center;
+
+    &__info {
+      text-align: center;
+    }
+
+    &__title {
+      font-family: Poppins;
+      font-size: 44px;
+      font-weight: 500;
+      line-height: 58px;
+      letter-spacing: -1px;
+      text-align: center;
+      color: #121212;
+    }
+
+    &__text {
+      //styleName: Body 1;
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      text-align: center;
+      color: #121212;
+    }
+  }
+
+  &__btn {
+    padding: 10px 30px;
+    width: 170px;
+    border-radius: 40px;
+    margin: 20px auto;
+    display: block;
+    background-color: transparent;
+    border: 1px solid #aaa5;
+  }
+
+  @media (max-width: 450px) {
+    &__top {
+      height: 250px;
+    }
+
+    &__top__title {
+      font-family: Poppins;
+      font-size: 34px;
+    }
+    &__text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+  }
+}

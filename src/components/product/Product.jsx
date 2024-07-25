@@ -3,6 +3,7 @@ import { useGetProductsQuery } from "../../context/api/productApi";
 import { GoArrowRight } from "react-icons/go";
 import "./product.scss";
 import { AiOutlineHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const { data } = useGetProductsQuery();
@@ -20,7 +21,9 @@ const Product = () => {
             <AiOutlineHeart />
           </button>
         </div>
-        <img src={product?.images[0]} alt="" />
+        <Link to={`/single/${product?.id}`}>
+          <img src={product?.images[0]} alt="" />
+        </Link>
       </div>
       <div className="product__card__info">
         <p className="product__card__info__title">{product?.title}</p>

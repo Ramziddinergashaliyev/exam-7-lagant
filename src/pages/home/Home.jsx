@@ -16,7 +16,7 @@ const Home = () => {
       <Product />
       <Service />
       <Sale />
-      <Article />
+      <Article limit={4} />
       <News />
     </div>
   );
