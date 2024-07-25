@@ -1,16 +1,16 @@
 import React from "react";
 import { ARTICLE } from "../../static";
 import { LuArrowRight } from "react-icons/lu";
+import { useGetProductsQuery } from "../../context/api/productApi";
 
 import "./article.scss";
-import { useGetProductsQuery } from "../../context/api/productApi";
 
 const Article = ({ limit }) => {
   const { data } = useGetProductsQuery();
   console.log(data);
 
   const articleData = data?.slice(1, limit)?.map((el) => (
-    <div className="article__card">
+    <div key={el?.id} className="article__card">
       <div className="article__card__img">
         <img src={el?.images[1]} alt="" />
       </div>

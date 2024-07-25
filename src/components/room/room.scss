@@ -89,4 +89,12 @@
       grid-row: auto;
     }
   }
+
+  @media (max-width: 400px) {
+    &__card__info {
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
 }
