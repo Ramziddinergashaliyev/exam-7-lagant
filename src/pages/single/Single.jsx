@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGetProductByIdQuery } from "../../context/api/productApi";
 import { AiFillStar } from "react-icons/ai";
@@ -13,6 +13,10 @@ const Single = () => {
   const { id } = useParams();
   const { data } = useGetProductByIdQuery(id);
   console.log(data);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
 
   const [choose, setChoose] = useState(0);
 

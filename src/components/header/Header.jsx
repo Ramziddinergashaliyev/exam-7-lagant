@@ -73,7 +73,7 @@ const Header = () => {
           </ul>
           <div className="header__nav__icons">
             <FiSearch />
-            <Link>
+            <Link to={"/admin"}>
               <FaRegCircleUser />
             </Link>
             <Link to={"/cart"}>
