@@ -10,7 +10,6 @@
     border-radius: 10px;
 
     &__title {
-      //styleName: Headline 3;
       font-family: Poppins;
       font-size: 54px;
       font-weight: 500;
@@ -39,14 +38,6 @@
         font-size: 16px;
         line-height: 20px;
       }
-    }
-  }
-
-  &__cards {
-    padding: 0px 50px;
-
-    @media (max-width: 550px) {
-      padding: 0px;
     }
   }
 }

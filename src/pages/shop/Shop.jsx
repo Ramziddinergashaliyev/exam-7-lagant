@@ -5,20 +5,22 @@ import News from "../../components/news/News.jsx";
 
 const Shop = () => {
   return (
-    <div className="shop">
-      <div className="shop__top container">
-        <div className="shop__top__info">
-          <h3 className="shop__top__title">Shop Page</h3>
-          <p className="shop__top__text">
-            Let’s design the place you always imagined.
-          </p>
+    <>
+      <div className="shop container">
+        <div className="shop__top">
+          <div className="shop__top__info">
+            <h3 className="shop__top__title">Shop Page</h3>
+            <p className="shop__top__text">
+              Let’s design the place you always imagined.
+            </p>
+          </div>
         </div>
       </div>
-      <div className="shop__cards container">
+      <div className="shop__cards">
         <ProductWrapper />
       </div>
       <News />
-    </div>
+    </>
   );
 };
 

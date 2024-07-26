@@ -11,9 +11,12 @@ import { FaRegHeart } from "react-icons/fa";
 
 import "./header.scss";
 import Menu from "../menu/Menu";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const wishlistData = useSelector((state) => state.wishlist.value);
+  const cartData = useSelector((state) => state.cart.value);
 
   let { pathname } = useLocation();
   if (pathname.includes("admin")) {
@@ -76,10 +79,12 @@ const Header = () => {
             <Link to={"/admin"}>
               <FaRegCircleUser />
             </Link>
-            <Link to={"/cart"}>
+            <Link className="header__nav__icons-pos" to={"/cart"}>
+              <sup>{cartData.length}</sup>
               <LuShoppingBag />
             </Link>
-            <Link to={"/wishlist"}>
+            <Link className="header__nav__icons-pos" to={"/wishlist"}>
+              <sup>{wishlistData.length}</sup>
               <FaRegHeart />
             </Link>
           </div>
