@@ -10,7 +10,7 @@ const initialState = {
   title: "",
   price: "",
   oldPrice: "",
-  descreption: "",
+  description: "",
   images: [],
 };
 
@@ -57,10 +57,10 @@ const CreateProduct = () => {
           type="text"
         />
         <input
-          value={formData.descreption}
+          value={formData.description}
           onChange={handleChange}
-          name="descreption"
-          placeholder="descreption"
+          name="description"
+          placeholder="description"
           type="text"
         />
         <button>Create</button>
