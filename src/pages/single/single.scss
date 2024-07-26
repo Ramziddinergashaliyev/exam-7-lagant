@@ -25,12 +25,10 @@
   }
 
   &__left__img {
-    background-color: #f3f5f7;
-    padding: 40px;
     display: grid;
     place-items: center;
     img {
-      width: 90%;
+      width: 100%;
     }
 
     &-cleane {

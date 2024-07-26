@@ -7,6 +7,7 @@ import { LuShoppingBag, LuTicket } from "react-icons/lu";
 import { FaArrowRight } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
+import { FaRegHeart } from "react-icons/fa";
 
 import "./header.scss";
 import Menu from "../menu/Menu";
@@ -71,15 +72,15 @@ const Header = () => {
             </li>
           </ul>
           <div className="header__nav__icons">
-            {/* <div className="header__nav__icons-search">
-              <input type="text" />
-            </div> */}
             <FiSearch />
             <Link>
               <FaRegCircleUser />
             </Link>
-            <Link to={"/wishlist"}>
+            <Link to={"/cart"}>
               <LuShoppingBag />
+            </Link>
+            <Link to={"/wishlist"}>
+              <FaRegHeart />
             </Link>
           </div>
         </nav>

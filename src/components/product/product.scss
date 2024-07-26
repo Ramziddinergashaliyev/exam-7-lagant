@@ -29,6 +29,21 @@
     }
   }
 
+  // &__pegination {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: flex-end;
+  //   align-items: flex-end;
+  //   margin-top: 20px;
+  //   background-color: red;
+  // }
+
+  &__card__star {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
   &__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

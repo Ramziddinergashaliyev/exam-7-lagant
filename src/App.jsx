@@ -13,6 +13,10 @@ import CreateProduct from "./pages/admin/createProduct/CreateProduct";
 import ManageProduct from "./pages/admin/manageProduct/ManageProduct";
 import CreateCategory from "./pages/admin/createCategory/CreateCategory";
 import ManageCategory from "./pages/admin/manageCategory/ManageCategory";
+import Cart from "./pages/cart/Cart";
+import Chekout from "./pages/cart/chekout/Chekout";
+import Order from "./pages/cart/order/Order";
+import Shopping from "./pages/cart/shopping/Shopping";
 
 function App() {
   return (
@@ -30,6 +34,11 @@ function App() {
           <Route path="manageProduct" element={<ManageProduct />} />
           <Route path="createCategory" element={<CreateCategory />} />
           <Route path="manageCategory" element={<ManageCategory />} />
+        </Route>
+        <Route path="/cart" element={<Cart />}>
+          <Route path="chekout" element={<Chekout />} />
+          <Route path="order" element={<Order />} />
+          <Route path="shopping" element={<Shopping />} />
         </Route>
       </Routes>
       <Footer />
