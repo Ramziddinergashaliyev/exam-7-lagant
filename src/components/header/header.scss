@@ -1,11 +1,11 @@
 .header__top {
   background-color: #f3f5f7;
   &__info {
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 10px;
     &__title {
       font-family: Inter;
       font-size: 14px;
@@ -46,6 +46,7 @@
   left: 0;
   z-index: 90;
   background-color: white;
+  padding: 10px 0px;
   &__nav {
     display: flex;
     align-items: center;
