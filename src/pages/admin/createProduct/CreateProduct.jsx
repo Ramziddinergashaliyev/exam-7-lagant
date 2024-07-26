@@ -11,7 +11,7 @@ const initialState = {
   price: "",
   oldPrice: "",
   description: "",
-  images: [],
+  images: "",
 };
 
 const CreateProduct = () => {
