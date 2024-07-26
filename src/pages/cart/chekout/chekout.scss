@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 400px;
   grid-gap: 30px;
   align-items: flex-start;
+  padding: 30px 0px !important;
   &__left {
     display: flex;
     flex-direction: column;

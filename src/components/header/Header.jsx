@@ -79,7 +79,7 @@ const Header = () => {
             <Link to={"/admin"}>
               <FaRegCircleUser />
             </Link>
-            <Link className="header__nav__icons-pos" to={"/cart"}>
+            <Link className="header__nav__icons-pos" to={"/cart/shopping"}>
               <sup>{cartData.length}</sup>
               <LuShoppingBag />
             </Link>
