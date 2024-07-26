@@ -31,11 +31,11 @@ function Shopping() {
       <div className="cart__data">
         <div>
           <div className="cart__top__row">
-            <h3>PRODUCT</h3>
+            <h4>PRODUCT</h4>
             <div className="cart__top__row__right">
-              <h3>PRICE</h3>
-              <h3>QTY</h3>
-              <h3>UNIT PRICE</h3>
+              <h4>PRICE</h4>
+              <h4>QTY</h4>
+              <h4>UNIT PRICE</h4>
             </div>
           </div>
           <div className="cart__bottom">
@@ -48,32 +48,25 @@ function Shopping() {
                   <div className="cart__bottom__row-product__img">
                     <img src={el?.images[0]} alt="" />
                   </div>
-                  <p>{el?.title}</p>
+                  <p className="cart__bottom__row-product-title">{el?.title}</p>
                 </div>
                 <div className="cart__bottom__row__left">
-                  <div className="cart__bottom__row-info">
-                    <p className="cart__hide">PRICE</p>
-                    <p>{el?.price}</p>
+                  <p className="cart__bottom__row-info">{el?.price}</p>
+                  <div className="cart__bottom__row-btns">
+                    <button onClick={() => dispatch(incrementCart(el))}>
+                      +
+                    </button>
+                    <button>{el.quantity}</button>
+                    <button
+                      disabled={el.quantity <= 0}
+                      onClick={() => dispatch(decrementCart(el))}
+                    >
+                      -
+                    </button>
                   </div>
-                  <div className="cart__bottom__row-info">
-                    <p className="cart__hide">QTY</p>
-                    <div className="cart__bottom__row-btns">
-                      <button onClick={() => dispatch(incrementCart(el))}>
-                        +
-                      </button>
-                      <span>{el.quantity}</span>
-                      <button
-                        disabled={el.quantity <= 0}
-                        onClick={() => dispatch(decrementCart(el))}
-                      >
-                        -
-                      </button>
-                    </div>
-                  </div>
-                  <div className="cart__bottom__row-info">
-                    <p className="cart__hide">UNIT</p>
-                    <p>{(el?.price * el.quantity).toFixed(1)}</p>
-                  </div>
+                  <p className="cart__bottom__row-info">
+                    {(el?.price * el.quantity).toFixed(1)}
+                  </p>
                 </div>
               </div>
             ))}
