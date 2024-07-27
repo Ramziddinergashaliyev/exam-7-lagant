@@ -8,6 +8,7 @@ import {
   deleteAllCart,
   incrementCart,
 } from "../../../context/slices/cartSlice";
+import { Link, useNavigate } from "react-router-dom";
 
 function Shopping() {
   const dispatch = useDispatch();
@@ -25,6 +26,8 @@ function Shopping() {
     window.scroll(0, 0);
   }, []);
   console.log(totalPrice);
+
+  const navigate = useNavigate();
 
   return (
     <div className="cart container">
@@ -91,7 +94,9 @@ function Shopping() {
               <h2>TOTAL</h2>
               <h2>$200</h2>
             </div>
-            <button>Check out</button>
+            <button onClick={() => navigate("/cart/checkout")}>
+              Check out
+            </button>
           </div>
         </div>
       </div>
@@ -100,6 +105,7 @@ function Shopping() {
         <p>Add your code for an instant cart discount</p>
         <form action="">
           <input
+            required
             placeholder="Voucher code"
             value={value}
             onChange={(e) => setValue(e.target.value)}

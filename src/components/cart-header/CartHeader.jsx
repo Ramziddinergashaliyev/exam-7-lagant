@@ -1,19 +1,28 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./cartHeader.scss";
 
 const CartHeader = () => {
+  const pathnames = ["shopping", "checkout", "order"];
+  let { pathname } = useLocation();
+  pathname = pathname.split("/")[2];
+  let index = pathnames.findIndex((text) => text === pathname);
+
+  let completed = { color: "green", borderBottom: "2px solid green" };
+  let disabled = { color: "#aaa", borderBottom: "2px solid transparent" };
+  let active = { color: "#000", borderBottom: "2px solid #000" };
+
   return (
     <div className="cartHeader container">
       <ul className="cartHeader__list">
-        <li className="cartHeader__item">
-          <NavLink to={"shopping"}>Shopping cart</NavLink>
+        <li style={index > 0 ? completed : index === 0 ? active : disabled}>
+          Shopping cart
         </li>
-        <li className="cartHeader__item">
-          <NavLink to={"chekout"}>Checkout details</NavLink>
+        <li style={index > 1 ? completed : index === 1 ? active : disabled}>
+          Checkout details
         </li>
-        <li className="cartHeader__item">
-          <NavLink to={"order"}>Order complete</NavLink>
+        <li style={index > 2 ? completed : index === 2 ? active : disabled}>
+          Order complete
         </li>
       </ul>
     </div>

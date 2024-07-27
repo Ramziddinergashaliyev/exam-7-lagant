@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./shop.scss";
 import ProductWrapper from "../../components/productWrapper/ProductWrapper.jsx";
 import News from "../../components/news/News.jsx";
 
 const Shop = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
       <div className="shop container">

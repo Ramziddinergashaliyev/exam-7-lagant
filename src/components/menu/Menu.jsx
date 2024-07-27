@@ -31,29 +31,47 @@ const Menu = ({ setShow }) => {
             <Link to={"/"}>Home</Link>
           </li>
           <li className="menu__top__item">
-            <Link className="menu__top__item-link" to={"/shop"}>
+            <Link
+              className="menu__top__item-link"
+              to={"/shop"}
+              onClick={() => setShow(false)}
+            >
               Shop
               <FaAngleDown />
             </Link>
           </li>
           <li className="menu__top__item">
-            <Link className="menu__top__item-link" to={"/blog"}>
+            <Link
+              className="menu__top__item-link"
+              to={"/blog"}
+              onClick={() => setShow(false)}
+            >
               Blog
               <FaAngleDown />
             </Link>
           </li>
           <li className="menu__top__item">
-            <Link to={"/contact"}>Contact</Link>
+            <Link to={"/contact"} onClick={() => setShow(false)}>
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
       <div className="menu__bottom">
         <div className="menu__bottom__item">
-          <Link className="menu__bottom__link">
+          <Link
+            to={"/wishlist"}
+            className="menu__bottom__link header__nav__icons-pos"
+            onClick={() => setShow(false)}
+          >
             Cart
             <FiShoppingBag />
           </Link>
-          <Link className="menu__bottom__link">
+          <Link
+            to={"/cart"}
+            className="menu__bottom__link header__nav__icons-pos"
+            onClick={() => setShow(false)}
+          >
             Wishlist <FaRegHeart />
           </Link>
         </div>

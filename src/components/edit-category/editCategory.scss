@@ -1,0 +1,23 @@
+.edit__category {
+  &__form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    input {
+      width: 300px;
+      padding: 8px;
+      outline: none;
+      border: 1px solid #aaa5;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 8px 20px;
+      border: 1px solid #aaa5;
+      background-color: black;
+      color: white;
+      border-radius: 4px;
+    }
+  }
+}

@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./blog.scss";
 import Article from "../../components/article/Article";
 import News from "../../components/news/News";
+import { useGetCategoryQuery } from "../../context/api/categoryApi";
+import { Value } from "sass";
+import { useGetProductsQuery } from "../../context/api/productApi";
 
 const Blog = () => {
+  const [category, setCategory] = useState();
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
+  const { data } = useGetCategoryQuery({
+    category: category,
+  });
+
+  const { data: product } = useGetProductsQuery({
+    category: category,
+    limit: 9,
+    page: 1,
+  });
+
   return (
     <>
       <div className="blog container">
@@ -16,7 +34,25 @@ const Blog = () => {
       </div>
 
       <div>
-        <Article limit={10} />
+        <div className="blog__category container">
+          <data
+            className="blog__category-item"
+            onClick={() => setCategory("")}
+            value={""}
+          >
+            All
+          </data>
+          {data?.map((el) => (
+            <data
+              className="blog__category-item"
+              onClick={(e) => setCategory(el.title)}
+              value={el?.title}
+            >
+              {el?.title}
+            </data>
+          ))}
+        </div>
+        <Article data={product} limit={10} />
         <button className="blog__btn">Show more</button>
       </div>
       <News />

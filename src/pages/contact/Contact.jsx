@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./contact.scss";
 import img from "../../assets/images/rasm.jpg";
 import { GoArrowRight } from "react-icons/go";
@@ -9,6 +9,10 @@ import Map from "../../components/map/Map";
 import Service from "../../components/service/Service.jsx";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
   return (
     <>
       <div className="contact container">

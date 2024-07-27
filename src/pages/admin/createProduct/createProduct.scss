@@ -13,11 +13,12 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 15px;
+    select,
     input {
       width: 100%;
       padding: 10px;
       border-radius: 5px;
-      background-color: #aaa3;
+      background-color: #aaa1;
       border: 1px solid #aaa6;
       outline: none;
     }
@@ -28,7 +29,7 @@
       border: none;
       color: white;
       padding: 10px 30px;
-      width: 200px;
+      width: 100%;
     }
   }
 }

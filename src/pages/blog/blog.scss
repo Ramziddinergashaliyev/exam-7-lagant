@@ -34,6 +34,44 @@
     }
   }
 
+  &__category {
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+    gap: 10px;
+    &-item {
+      border: 1px solid gray;
+      margin: 20px 0px 10px;
+      background-color: white;
+      cursor: pointer;
+      min-width: 200px;
+      text-align: center;
+      padding: 4px 4px;
+      scroll-behavior: smooth;
+    }
+
+    &-item:hover {
+      background-color: #121212;
+      color: white;
+    }
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
   &__btn {
     padding: 10px 30px;
     width: 170px;

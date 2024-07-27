@@ -1,0 +1,125 @@
+.order {
+  width: 700px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #aaa5;
+  padding: 40px;
+  margin: 30px auto;
+
+  &__info__desc {
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: -0.6000000238418579px;
+    text-align: center;
+    color: #6c7275;
+  }
+
+  &__info__title {
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    color: #23262f;
+    padding: 10px 140px 20px;
+  }
+
+  &__imgs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  &__img {
+    width: 100px;
+    height: 120px;
+  }
+  &__card {
+    position: relative;
+
+    sub {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      color: white;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    p {
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 22px;
+      text-align: left;
+      color: #6c7275;
+      width: 200px;
+      padding: 0px 20px;
+    }
+
+    span {
+      width: 200px;
+      padding: 0px 20px;
+      color: #141718;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 22px;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 740px) {
+    width: 95%;
+    &__info__title {
+      font-family: Poppins;
+      font-size: 30px;
+      font-weight: 500;
+      text-align: center;
+      color: #23262f;
+      padding: 10px 40px 20px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    padding: 10px;
+    &__info__title {
+      padding: 10px;
+      font-size: 20px;
+    }
+
+    &__imgs {
+      gap: 10px;
+    }
+
+    &__img {
+      width: 60px;
+      height: 60px;
+    }
+
+    &__item {
+      flex-direction: column;
+      span,
+      p {
+        padding: 0;
+      }
+    }
+  }
+}

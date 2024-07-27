@@ -7,8 +7,10 @@ import Sale from "../../components/sale/Sale";
 import Article from "../../components/article/Article";
 import News from "../../components/news/News";
 import ProductWrapper from "../../components/productWrapper/ProductWrapper";
+import { useGetProductsQuery } from "../../context/api/productApi";
 
 const Home = () => {
+  const { data } = useGetProductsQuery({ limit: 3, page: 1 });
   return (
     <Fragment>
       <Hero />
@@ -16,7 +18,7 @@ const Home = () => {
       <ProductWrapper />
       <Service />
       <Sale />
-      <Article limit={4} />
+      <Article data={data} />
       <News />
     </Fragment>
   );

@@ -11,13 +11,16 @@ import img6 from "../../assets/icons/img-5.svg";
 import img7 from "../../assets/icons/Vector.svg";
 import out from "../../assets/icons/out.svg";
 import { FaArrowLeft } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { logout } from "../../context/slices/authSlice";
 
 function Sidebar() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogout = () => {
-    localStorage.clear();
-    navigate("/login");
+    dispatch(logout());
+    navigate("/");
   };
   return (
     <section className="sidebar">

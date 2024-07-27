@@ -5,6 +5,9 @@ import {
   useDeleteProductMutation,
 } from "../../../context/api/productApi";
 import { useGetValue } from "../../../hooks/useGetValue";
+import { useGetCategoryQuery } from "../../../context/api/categoryApi";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
   title: "",
@@ -12,16 +15,21 @@ const initialState = {
   oldPrice: "",
   description: "",
   images: "",
+  select: "",
 };
 
 const CreateProduct = () => {
   const { formData, handleChange } = useGetValue(initialState);
 
   const [createData, { data }] = useCreateProductMutation();
+  const { data: category } = useGetCategoryQuery();
+  const navigate = useNavigate();
 
   const handleCreate = (e) => {
     e.preventDefault();
     createData(formData);
+    navigate("/admin/manageProduct");
+    toast.success("ProductYaratildi");
   };
 
   return (
@@ -35,13 +43,13 @@ const CreateProduct = () => {
           placeholder="title"
           type="text"
         />
-        <input
-          value={formData.images}
-          onChange={handleChange}
-          name="images"
-          placeholder="images"
-          type="text"
-        />
+        <select value={formData.select} onChange={handleChange} name="" id="">
+          {category?.map((el) => (
+            <option key={el?.id} value="">
+              {el?.title}
+            </option>
+          ))}
+        </select>
         <input
           value={formData.price}
           onChange={handleChange}

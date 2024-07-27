@@ -3,7 +3,7 @@ import ProductWrapper from "../../../components/productWrapper/ProductWrapper";
 
 const ManageProduct = () => {
   return (
-    <div>
+    <div className="container">
       <ProductWrapper isBool={true} />
     </div>
   );

@@ -4,15 +4,21 @@ import { useGetProductByIdQuery } from "../../context/api/productApi";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { GoArrowRight } from "react-icons/go";
-
-import "./single.scss";
 import { CONTACT } from "../../static";
 import News from "../../components/news/News";
+import SingleLoading from "../../components/singleLoading/SingleLoading.jsx";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+
+import "./single.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleHeart } from "../../context/slices/wishlistSlice.js";
+import { addToCart } from "../../context/slices/cartSlice.js";
 
 const Single = () => {
   const { id } = useParams();
-  const { data } = useGetProductByIdQuery(id);
-  console.log(data);
+  const { data, isLoading } = useGetProductByIdQuery(id);
+  const dispatch = useDispatch();
+  const wishlistData = useSelector((state) => state.wishlist.value);
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -23,92 +29,118 @@ const Single = () => {
   return (
     <>
       <div className="single container">
-        <div className="single__cards">
-          <div className="single__left">
-            <div className="single__left__img">
-              <img src={data?.images[choose]} alt="" />
-            </div>
-            <div className="single__left__img-cleane">
-              {data?.images?.map((el, inx) => (
-                <div
-                  className={`single__left__img-cleane-imgs ${
-                    choose === inx ? "single__left__img-cleane-active" : ""
-                  }`}
-                  onClick={() => setChoose(inx)}
-                  key={inx}
-                >
-                  <img src={el} alt="" />
+        {isLoading ? (
+          <SingleLoading />
+        ) : (
+          <>
+            <div className="single__cards">
+              <div className="single__left">
+                <div className="single__left__img">
+                  <img src={data?.images[choose]} alt="" />
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="single__right">
-            <div className="single__right__star">
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <span>11 Reviews</span>
-            </div>
-            <div className="single__right__info">
-              <p className="single__right__title">{data?.title}</p>
-              <h3 className="single__right__desc">{data?.description}</h3>
-              <div className="single__right__price">
-                <p className="single__right__price-title">${data?.price} </p>
-                <p className="single__right__price-old">
-                  $ {data?.price < data?.oldPrice ? data?.oldPrice : <></>}
-                </p>
-              </div>
-            </div>
-            <div className="single__right__btns">
-              <p className="single__right__btns-title">Offer expires in:</p>
-              <div className="single__right__btns-day">
-                <div className="single__right__btns-hours">
-                  <button>02</button>
-                  <span>Days</span>
-                </div>
-                <div className="single__right__btns-hours">
-                  <button>12</button>
-                  <span>Hours</span>
-                </div>
-                <div className="single__right__btns-hours">
-                  <button>45</button>
-                  <span>Minutes</span>
-                </div>
-                <div className="single__right__btns-hours">
-                  <button>05</button>
-                  <span>Seconds</span>
+                <div className="single__left__img-cleane">
+                  {data?.images?.map((el, inx) => (
+                    <div
+                      className={`single__left__img-cleane-imgs ${
+                        choose === inx ? "single__left__img-cleane-active" : ""
+                      }`}
+                      onClick={() => setChoose(inx)}
+                      key={inx}
+                    >
+                      <img src={el} alt="" />
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-            <div className="single__right__result">
-              <p>Measurements</p>
-              <h3>17 1/2x20 5/8 "</h3>
-            </div>
-            <div className="single__right__colors">
-              <p>Choose Color</p>
-              <div className="single__right__colors-imgs">
-                {data?.images?.map((el) => (
-                  <img src={el} alt="" />
-                ))}
-              </div>
-            </div>
-            <div className="single__right__item">
-              <div className="single__right__item__btns">
-                <div className="single__right__item__btns-counter">
-                  <button>-</button>
-                  <button>1</button>
-                  <button>+</button>
+              <div className="single__right">
+                <div className="single__right__star">
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <AiFillStar />
+                  <span>11 Reviews</span>
                 </div>
-                <button className="single__right__item__btns-heart">
-                  <AiOutlineHeart /> Wishlist
-                </button>
+                <div className="single__right__info">
+                  <p className="single__right__title">{data?.title}</p>
+                  <h3 className="single__right__desc">{data?.description}</h3>
+                  <div className="single__right__price">
+                    <p className="single__right__price-title">
+                      ${data?.price}{" "}
+                    </p>
+                    <p className="single__right__price-old">
+                      $ {data?.price < data?.oldPrice ? data?.oldPrice : <></>}
+                    </p>
+                  </div>
+                </div>
+                <div className="single__right__btns">
+                  <p className="single__right__btns-title">Offer expires in:</p>
+                  <div className="single__right__btns-day">
+                    <div className="single__right__btns-hours">
+                      <button>02</button>
+                      <span>Days</span>
+                    </div>
+                    <div className="single__right__btns-hours">
+                      <button>12</button>
+                      <span>Hours</span>
+                    </div>
+                    <div className="single__right__btns-hours">
+                      <button>45</button>
+                      <span>Minutes</span>
+                    </div>
+                    <div className="single__right__btns-hours">
+                      <button>05</button>
+                      <span>Seconds</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="single__right__result">
+                  <p>Measurements</p>
+                  <h3>17 1/2x20 5/8 "</h3>
+                </div>
+                <div className="single__right__colors">
+                  <p>Choose Color</p>
+                  <div className="single__right__colors-imgs">
+                    {data?.images?.map((el) => (
+                      <img src={el} alt="" />
+                    ))}
+                  </div>
+                </div>
+                <div className="single__right__item">
+                  <div className="single__right__item__btns">
+                    <div className="single__right__item__btns-counter">
+                      <button>-</button>
+                      <button>1</button>
+                      <button>+</button>
+                    </div>
+                    <button
+                      onClick={() => dispatch(toggleHeart(data))}
+                      className="single__right__item__btns-heart"
+                    >
+                      {wishlistData.some((el) => el.id === data?.id) ? (
+                        <>
+                          <FaHeart color="#FF4858" />
+                          <p>Wishlist</p>
+                        </>
+                      ) : (
+                        <>
+                          <FaRegHeart />
+                          Wishlist
+                        </>
+                      )}
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => dispatch(addToCart(data))}
+                    className="single__right__item-cart"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </div>
-              <button className="single__right__item-cart">Add to Cart</button>
             </div>
-          </div>
-        </div>
+          </>
+        )}
 
         <div className="single__middle">
           <ul className="single__middle__list">

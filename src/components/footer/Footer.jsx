@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 
 const Footer = () => {
   let { pathname } = useLocation();
-  if (pathname.includes("admin")) {
+  if (pathname.includes("admin") || pathname.includes("login")) {
     return <></>;
   }
 

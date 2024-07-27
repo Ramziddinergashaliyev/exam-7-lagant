@@ -7,5 +7,5 @@ export const useGetValue = (initialState) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  return { formData, handleChange };
+  return { formData, setFormData, handleChange };
 };

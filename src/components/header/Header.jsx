@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import img from "../../assets/icon/Logo.png";
 import { FiSearch } from "react-icons/fi";
 import { FaRegCircleUser } from "react-icons/fa6";
@@ -14,12 +14,11 @@ import Menu from "../menu/Menu";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [show, setShow] = useState(false);
+  const [hide, setHide] = useState(false);
   const wishlistData = useSelector((state) => state.wishlist.value);
   const cartData = useSelector((state) => state.cart.value);
-
   let { pathname } = useLocation();
-  if (pathname.includes("admin")) {
+  if (pathname.includes("admin") || pathname.includes("login")) {
     return <></>;
   }
 
@@ -38,11 +37,11 @@ const Header = () => {
       </div>
       <header className="header">
         <nav className="header__nav container">
-          {show ? (
+          {hide ? (
             <>
-              <Menu setShow={setShow} />{" "}
+              <Menu setShow={setHide} />{" "}
               <div
-                onClick={() => setShow(false)}
+                onClick={() => setHide(false)}
                 className="header__nav__overlay"
               ></div>
             </>
@@ -50,7 +49,7 @@ const Header = () => {
             <></>
           )}
           <div className="header__nav__logo">
-            <button onClick={() => setShow(true)}>
+            <button onClick={() => setHide(true)}>
               <RxHamburgerMenu />
             </button>
             <Link to={"/"}>
@@ -58,20 +57,20 @@ const Header = () => {
             </Link>
           </div>
           <ul className="header__nav__list">
-            <li onClick={() => setShow(false)} className="header__nav__close">
+            <li onClick={() => setHide(false)} className="header__nav__close">
               <IoMdClose />
             </li>
             <li className="header__nav__item">
-              <Link to={"/"}>Home</Link>
+              <NavLink to={"/"}>Home</NavLink>
             </li>
             <li className="header__nav__item">
-              <Link to={"/shop"}>Shop</Link>
+              <NavLink to={"/shop"}>Shop</NavLink>
             </li>
             <li className="header__nav__item">
-              <Link to={"/blog"}>Blog</Link>
+              <NavLink to={"/blog"}>Blog</NavLink>
             </li>
             <li className="header__nav__item">
-              <Link to={"/contact"}>Contact Us</Link>
+              <NavLink to={"/contact"}>Contact Us</NavLink>
             </li>
           </ul>
           <div className="header__nav__icons">
