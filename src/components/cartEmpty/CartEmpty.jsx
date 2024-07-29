@@ -1,12 +1,12 @@
 import React from "react";
-import img from "../../assets/images/heart.webp";
-
-import "./empty.scss";
+import img from "../../assets/images/cart.webp";
 import { NavLink } from "react-router-dom";
 
-const Empty = () => {
+import "./cartEmpty.scss";
+
+const CartEmpty = () => {
   return (
-    <div className="empty">
+    <div className="cartEmpty container">
       <p>No favorites found</p>
       <img src={img} alt="" />
       <NavLink to={"/"}>
@@ -16,4 +16,4 @@ const Empty = () => {
   );
 };
 
-export default Empty;
+export default CartEmpty;

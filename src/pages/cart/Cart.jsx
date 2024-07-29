@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import CartHeader from "../../components/cart-header/CartHeader";
 import { useSelector } from "react-redux";
 import Empty from "../../components/empty/Empty";
+import CartEmpty from "../../components/cartEmpty/CartEmpty";
 
 const Cart = () => {
   const card = useSelector((state) => state.cart.value);
@@ -14,7 +15,7 @@ const Cart = () => {
           <Outlet />
         </>
       ) : (
-        <Empty />
+        <CartEmpty />
       )}
     </div>
   );
