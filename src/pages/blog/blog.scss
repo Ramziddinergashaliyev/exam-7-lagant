@@ -40,7 +40,7 @@
     overflow-y: auto;
     gap: 10px;
     &-item {
-      border: 1px solid gray;
+      border: 1px solid #aaa5;
       margin: 20px 0px 10px;
       background-color: white;
       cursor: pointer;
@@ -51,8 +51,7 @@
     }
 
     &-item:hover {
-      background-color: #121212;
-      color: white;
+      background-color: #aaa4;
     }
 
     &::-webkit-scrollbar {
