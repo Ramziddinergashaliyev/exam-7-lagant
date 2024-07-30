@@ -95,5 +95,23 @@
       font-weight: 400;
       line-height: 22px;
     }
+
+    &__category {
+      display: flex;
+      align-items: center;
+      overflow-y: auto;
+      gap: 10px;
+      &-item {
+        border: 1px solid #aaa5;
+        margin: 20px 0px 10px;
+        background-color: white;
+        cursor: pointer;
+        min-width: 150px;
+        text-align: center;
+        padding: 4px 4px;
+        scroll-behavior: smooth;
+        font-size: 12px;
+      }
+    }
   }
 }

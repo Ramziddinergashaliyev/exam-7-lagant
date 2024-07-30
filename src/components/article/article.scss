@@ -12,7 +12,6 @@
     padding-bottom: 20px;
 
     &__title {
-      //styleName: Headline 4;
       font-family: Poppins;
       font-size: 40px;
       font-weight: 500;
@@ -23,7 +22,6 @@
     }
 
     &__link {
-      //styleName: Button S;
       font-family: Inter;
       font-size: 16px;
       font-weight: 500;
@@ -83,8 +81,25 @@
       grid-gap: 10px;
     }
 
+    &__card__img {
+      img {
+        height: 200px;
+      }
+    }
+
+    &__card__info {
+      h3 {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 0;
+      }
+    }
+
     &__top {
       flex-wrap: wrap;
+      &__title {
+        font-size: 24px;
+      }
     }
   }
 }

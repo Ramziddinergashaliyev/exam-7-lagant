@@ -82,6 +82,12 @@
       font-size: 24px;
       display: none;
     }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__nav__list {
@@ -169,7 +175,7 @@
     backdrop-filter: blur(1px);
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 550px) {
     &__nav__logo {
       button {
         display: block;

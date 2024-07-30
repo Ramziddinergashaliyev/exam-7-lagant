@@ -51,5 +51,25 @@
     &__desc {
       font-size: 16px;
     }
+    &__info__sign {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      gap: 10px;
+      padding-top: 20px;
+      border-bottom: 1px solid gray;
+      max-width: 250px;
+      input {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        margin: 0 auto;
+        display: block;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
   }
 }

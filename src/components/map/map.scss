@@ -55,7 +55,22 @@
 
     &__left {
       form {
+        label {
+          font-size: 12px;
+        }
+
+        button {
+          padding: 8px 10px;
+          width: 120px;
+        }
+
         gap: 5px;
+        input {
+          padding: 5px;
+        }
+        textarea {
+          height: 60px;
+        }
       }
     }
 

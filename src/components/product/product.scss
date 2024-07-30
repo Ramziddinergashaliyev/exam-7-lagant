@@ -1,5 +1,5 @@
 .product {
-  padding: 30px 0px;
+  padding: 30px 16px;
 
   &__top {
     display: flex;
@@ -28,15 +28,6 @@
       gap: 5px;
     }
   }
-
-  // &__pegination {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: flex-end;
-  //   align-items: flex-end;
-  //   margin-top: 20px;
-  //   background-color: red;
-  // }
 
   &__card__star {
     display: flex;
@@ -201,19 +192,22 @@
 
   @media (max-width: 800px) {
     &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
       h3 {
         font-size: 20px;
-        width: 100%;
-      }
-      &__text {
-        width: 200px;
+        width: 50%;
       }
     }
   }
 
   @media (max-width: 600px) {
     &__top {
-      flex-wrap: wrap;
+      &__title {
+        font-size: 18px;
+      }
     }
     &__cards {
       display: grid;
@@ -230,12 +224,41 @@
         object-fit: cover;
       }
     }
+
+    &__card__star {
+      svg {
+        font-size: 12px;
+      }
+    }
+
+    &__card__info {
+      gap: 0px;
+      padding: 3px 0px;
+    }
+
+    &__card__info__title {
+      font-size: 12px;
+    }
   }
-  @media (max-width: 350px) {
+  @media (max-width: 330px) {
     &__cards {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 10px;
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      h3 {
+        font-size: 18px;
+      }
+
+      &__text {
+        font-size: 14px;
+      }
     }
   }
 }

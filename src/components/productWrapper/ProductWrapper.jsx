@@ -8,6 +8,8 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import Loading from "../loading/Loading";
 
+import "./productWrapper.scss";
+
 const ProductWrapper = ({ isBool }) => {
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
